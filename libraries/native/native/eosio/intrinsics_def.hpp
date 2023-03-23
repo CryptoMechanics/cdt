@@ -4,6 +4,7 @@
 #include <eosio/chain.h>
 #include <eosio/crypto.h>
 #include <eosio/crypto_ext.h>
+#include <eosio/crypto_bls_ext.h>
 #include <eosio/db.h>
 #include <eosio/permission.h>
 #include <eosio/print.h>
@@ -171,7 +172,14 @@ intrinsic_macro(k1_recover) \
 intrinsic_macro(alt_bn128_add) \
 intrinsic_macro(alt_bn128_mul) \
 intrinsic_macro(alt_bn128_pair) \
-intrinsic_macro(mod_exp)
+intrinsic_macro(mod_exp) \
+intrinsic_macro(bls_g1_add) \
+intrinsic_macro(bls_g2_add) \
+intrinsic_macro(bls_g1_mul) \
+intrinsic_macro(bls_g2_mul) \
+intrinsic_macro(bls_g1_exp) \
+intrinsic_macro(bls_g2_exp) \
+intrinsic_macro(bls_pairing)
 
 
 
