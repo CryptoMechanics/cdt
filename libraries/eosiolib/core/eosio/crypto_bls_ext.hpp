@@ -44,6 +44,9 @@ namespace eosio {
 
             __attribute__((eosio_wasm_import))
             void bls_g2_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
+
+            __attribute__((eosio_wasm_import))
+            void bls_fp_mod(const char* s, uint32_t s_len, char* res, uint32_t res_len);
         }
     }
 
@@ -93,5 +96,10 @@ namespace eosio {
     void bls_g2_map(const bls_fp2& e, bls_g2& res)
     {
         return internal_use_do_not_use::bls_g2_map(reinterpret_cast<const char*>(e.data()), e.size(), reinterpret_cast<char*>(res.data()), res.size());
+    }
+
+    void bls_fp_mod(const std::array<uint8_t, 64>& s, bls_fp& res)
+    {
+        return internal_use_do_not_use::bls_fp_mod(reinterpret_cast<const char*>(s.data()), s.size(), reinterpret_cast<char*>(res.data()), res.size());
     }
 }

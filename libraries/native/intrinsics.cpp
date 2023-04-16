@@ -981,3 +981,8 @@ void bls_g2_map(const char* e, uint32_t e_len, char* res, uint32_t res_len)
 {
     intrinsics::get().call<intrinsics::bls_g2_map>(e, e_len, res, res_len);
 }
+
+void bls_fp_mod(const char* s, uint32_t s_len, char* res, uint32_t res_len)
+{
+    intrinsics::get().call<intrinsics::bls_fp_mod>(s, s_len, res, res_len);
+}

@@ -31,6 +31,9 @@ void bls_g1_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
 __attribute__((eosio_wasm_import))
 void bls_g2_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
 
+__attribute__((eosio_wasm_import))
+void bls_fp_mod(const char* s, uint32_t s_len, char* res, uint32_t res_len);
+
 #ifdef __cplusplus
 }
 #endif
