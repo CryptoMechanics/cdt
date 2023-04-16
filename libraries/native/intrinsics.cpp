@@ -971,3 +971,13 @@ void bls_pairing(const char* g1_points, uint32_t g1_points_len, const char* g2_p
 {
     intrinsics::get().call<intrinsics::bls_pairing>(g1_points, g1_points_len, g1_points, g1_points_len, n, res, res_len);
 }
+
+void bls_g1_map(const char* e, uint32_t e_len, char* res, uint32_t res_len)
+{
+    intrinsics::get().call<intrinsics::bls_g1_map>(e, e_len, res, res_len);
+}
+
+void bls_g2_map(const char* e, uint32_t e_len, char* res, uint32_t res_len)
+{
+    intrinsics::get().call<intrinsics::bls_g2_map>(e, e_len, res, res_len);
+}

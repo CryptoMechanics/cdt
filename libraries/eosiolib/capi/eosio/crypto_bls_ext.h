@@ -25,6 +25,12 @@ void bls_g2_exp(const char* points, uint32_t points_len, const char* scalars, ui
 __attribute__((eosio_wasm_import))
 void bls_pairing(const char* g1_points, uint32_t g1_points_len, const char* g2_points, uint32_t g2_points_len, uint32_t n, char* res, uint32_t res_len);
 
+__attribute__((eosio_wasm_import))
+void bls_g1_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
+
+__attribute__((eosio_wasm_import))
+void bls_g2_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
+
 #ifdef __cplusplus
 }
 #endif

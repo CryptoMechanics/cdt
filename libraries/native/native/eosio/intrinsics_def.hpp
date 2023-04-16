@@ -179,7 +179,9 @@ intrinsic_macro(bls_g1_mul) \
 intrinsic_macro(bls_g2_mul) \
 intrinsic_macro(bls_g1_exp) \
 intrinsic_macro(bls_g2_exp) \
-intrinsic_macro(bls_pairing)
+intrinsic_macro(bls_pairing) \
+intrinsic_macro(bls_g1_map) \
+intrinsic_macro(bls_g2_map)
 
 
 

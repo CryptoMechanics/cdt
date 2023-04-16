@@ -74,6 +74,20 @@ struct ALIGNED(capi_bls_scalar) {
 };
 
 /**
+ * BLS12-381 fp type (LE)
+ */
+struct ALIGNED(capi_bls_fp) {
+   uint8_t data[48];
+};
+
+/**
+ * BLS12-381 fp2 type (LE)
+ */
+struct ALIGNED(capi_bls_fp2) {
+   uint8_t data[96];
+};
+
+/**
  * BLS12-381 G1 type (Jacobian, LE)
  */
 struct ALIGNED(capi_bls_g1) {

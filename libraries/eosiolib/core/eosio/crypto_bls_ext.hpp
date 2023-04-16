@@ -10,6 +10,8 @@
 namespace eosio {
 
     using bls_scalar    = std::array<uint8_t, 32>;
+    using bls_fp        = std::array<uint8_t, 48>;
+    using bls_fp2       = std::array<uint8_t, 96>;
     using bls_g1        = std::array<uint8_t, 144>;
     using bls_g2        = std::array<uint8_t, 288>;
     using bls_gt        = std::array<uint8_t, 576>;
@@ -36,6 +38,12 @@ namespace eosio {
 
             __attribute__((eosio_wasm_import))
             void bls_pairing(const char* g1_points, uint32_t g1_points_len, const char* g2_points, uint32_t g2_points_len, uint32_t n, char* res, uint32_t res_len);
+
+            __attribute__((eosio_wasm_import))
+            void bls_g1_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
+
+            __attribute__((eosio_wasm_import))
+            void bls_g2_map(const char* e, uint32_t e_len, char* res, uint32_t res_len);
         }
     }
 
@@ -75,5 +83,15 @@ namespace eosio {
     {
         if(g1_points.size() != g2_points.size()) return;
         return internal_use_do_not_use::bls_pairing(reinterpret_cast<const char*>(g1_points.data()), g1_points.size() * sizeof(bls_g1), reinterpret_cast<const char*>(g2_points.data()), g2_points.size() * sizeof(bls_g2), g1_points.size(), reinterpret_cast<char*>(res.data()), res.size());
+    }
+
+    void bls_g1_map(const bls_fp& e, bls_g1& res)
+    {
+        return internal_use_do_not_use::bls_g1_map(reinterpret_cast<const char*>(e.data()), e.size(), reinterpret_cast<char*>(res.data()), res.size());
+    }
+
+    void bls_g2_map(const bls_fp2& e, bls_g2& res)
+    {
+        return internal_use_do_not_use::bls_g2_map(reinterpret_cast<const char*>(e.data()), e.size(), reinterpret_cast<char*>(res.data()), res.size());
     }
 }

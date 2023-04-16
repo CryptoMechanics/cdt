@@ -470,6 +470,8 @@ struct generation_utils {
          {"fixed_bytes_64", "checksum512"},
 
          {"capi_bls_scalar", "bls_scalar"},
+         {"capi_bls_g1", "bls_fp"},
+         {"capi_bls_g2", "bls_fp2"},
          {"capi_bls_g1", "bls_g1"},
          {"capi_bls_g2", "bls_g2"},
          {"capi_bls_gt", "bls_gt"}
@@ -769,6 +771,8 @@ struct generation_utils {
          "asset",
          "extended_asset",
          "bls_scalar",
+         "bls_fp",
+         "bls_fp2",
          "bls_g1",
          "bls_g2",
          "bls_gt"
